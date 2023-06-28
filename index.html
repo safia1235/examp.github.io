@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: https://path/to/your/image-target-file.mind;">
+      <a-assets>
+        <img id="box1" src="https://cdn.jsdelivr.net/gh/safia1235/ar2.github.io@master/box1.png" />
+        <img id="lwir" src="https://cdn.jsdelivr.net/gh/safia1235/ar2.github.io@master/lwir.png" />
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="#box1" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
+        <a-video src="#cam-feed" position="0 0 0.1" height="1" width="1" rotation="0 0 0"></a-video>
+        <a-plane src="#lwir" position="0 0 0.2" height="1" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
